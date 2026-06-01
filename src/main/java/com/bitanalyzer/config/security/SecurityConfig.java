@@ -1,4 +1,4 @@
-package com.bitanalyzer.config;
+package com.bitanalyzer.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
