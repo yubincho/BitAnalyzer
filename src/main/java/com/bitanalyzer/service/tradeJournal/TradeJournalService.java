@@ -6,6 +6,8 @@ import com.bitanalyzer.domain.marketSnapshot.repository.MarketSnapshotRepository
 import com.bitanalyzer.domain.tradeJournal.TradeJournal;
 import com.bitanalyzer.domain.tradeJournal.repository.TradeJournalRepository;
 
+import com.bitanalyzer.exception.BitAnalyzerException;
+import com.bitanalyzer.exception.enums.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,7 +43,8 @@ public class TradeJournalService {
 
     public TradeJournal findByOrderId(String orderId) {
         return tradeJournalRepository.findByOrderId(orderId)
-                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 거래입니다. orderId: " + orderId));
+                .orElseThrow(() -> new BitAnalyzerException(ErrorCode.TRADE_NOT_FOUND,
+                        "orderId: " + orderId));
     }
 
     /** 승률 계산  (퍼센트) */
