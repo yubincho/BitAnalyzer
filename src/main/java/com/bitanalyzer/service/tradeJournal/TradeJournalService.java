@@ -31,6 +31,7 @@ public class TradeJournalService {
 
         if (marketSnapshot != null) {
             marketSnapshot.setTradeJournal(savedTrade);
+            savedTrade.setMarketSnapshot(marketSnapshot);  // 양방향 연관관계
             marketSnapshotRepository.save(marketSnapshot);
         }
 

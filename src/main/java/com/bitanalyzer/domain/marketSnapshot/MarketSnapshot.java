@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "market_snapshot")
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor  // // (access = AccessLevel.PROTECTED)  테스트를 위해 잠시 보류
 @AllArgsConstructor
 public class MarketSnapshot {
 
