@@ -106,3 +106,12 @@ test-results/
 
 # ==================== Misc ====================
 HELP.md
+
+# ==================== Prevent duplicate files from backend ====================
+# backend 폴더 안에 있는 파일들이 루트에 중복으로 올라가지 않도록
+src/
+gradle/
+gradlew
+gradlew.bat
+build.gradle
+settings.gradle
