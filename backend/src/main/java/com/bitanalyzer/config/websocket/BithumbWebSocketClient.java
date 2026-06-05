@@ -2,6 +2,7 @@ package com.bitanalyzer.config.websocket;
 
 
 import com.bitanalyzer.service.tradeJournal.TradeJournalService;
+import com.bitanalyzer.service.bithumbMessageService.BithumbMessageService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ public class BithumbWebSocketClient {
 
     private final BithumbJwtProvider jwtProvider;
     private final TradeJournalService tradeJournalService;
+    private final BithumbMessageService bithumbMessageService;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     // Private 전용 엔드포인트
@@ -138,7 +140,8 @@ public class BithumbWebSocketClient {
         // 공통 처리
         private void handlePayload(String payload) {
             log.debug("WebSocket 메시지 수신: {}", payload);
-            tradeJournalService.processWebSocketMessage(payload);
+//            tradeJournalService.processWebSocketMessage(payload);
+            bithumbMessageService.processWebSocketMessage(payload);
         }
 
 

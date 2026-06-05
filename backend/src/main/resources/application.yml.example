@@ -85,6 +85,10 @@ logging:
     org.springframework.security: TRACE
     org.hibernate.SQL: DEBUG
 
+bithumb:
+  access-key:
+  secret-key:
+
 
 # ==================== prod profile ====================
 ---
