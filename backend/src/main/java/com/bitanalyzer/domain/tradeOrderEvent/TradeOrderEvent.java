@@ -54,6 +54,8 @@ public class TradeOrderEvent {
 
     private LocalDateTime createdAt;
 
+    private String source;      // websocket, excel
+
     // id, createdAt 제외하고 받음
     @Builder
     private TradeOrderEvent(String orderUuid, String tradeUuid, String code,
